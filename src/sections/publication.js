@@ -1,16 +1,19 @@
 import { gsap } from '../core/gsap.js';
 import { MOTION_CONDITIONS, finePointer } from '../core/motion.js';
 import { revealFade, revealLines, revealUp } from '../core/reveal.js';
+import { animateBrain } from '../components/brain.js';
 
 export function initPublication() {
   const section = document.querySelector('.pub');
   if (!section) return;
 
   const card = section.querySelector('.pub__card');
+  const brain = card.querySelector('.pub__brain');
   const label = card.querySelector('.section-label');
   const meta = card.querySelector('.pub__meta');
   const quote = card.querySelector('.pub__quote');
   const title = card.querySelector('.pub__title');
+  const subtitle = card.querySelector('.pub__subtitle');
   const rule = card.querySelector('.pub__rule');
   const footer = card.querySelector('.pub__footer');
   const link = card.querySelector('.pub__link');
@@ -27,7 +30,8 @@ export function initPublication() {
 
   mm.add(MOTION_CONDITIONS, (context) => {
     if (context.conditions.reduced) {
-      revealFade([label, meta, quote, title, rule, footer], { trigger: card, start: 'top 80%' });
+      // O cérebro fica estático (já desenhado); o resto só com um fade curto
+      revealFade([label, meta, quote, title, subtitle, rule, footer], { trigger: card, start: 'top 80%' });
       return;
     }
 
@@ -44,6 +48,7 @@ export function initPublication() {
       scrollTrigger: { trigger: card, start, once: true },
     });
     revealLines(title, { trigger: card, start, delay: 0.25, stagger: 0.12 });
+    revealUp(subtitle, { trigger: card, start, delay: 0.6 });
     gsap.from(rule, {
       scaleX: 0,
       duration: 1.8,
@@ -52,5 +57,8 @@ export function initPublication() {
       scrollTrigger: { trigger: card, start, once: true },
     });
     revealUp(footer, { trigger: card, start, delay: 0.8 });
+
+    // Cérebro: desenho do traço e impulsos na rede
+    return animateBrain(brain, { trigger: card });
   });
 }

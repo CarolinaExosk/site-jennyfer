@@ -457,6 +457,44 @@
       <section class="pub" id="publicacao" aria-labelledby="publicacao-titulo">
         <div class="container">
           <article class="pub__card">
+            <!-- Cérebro em traço fino (decorativo): desenha-se ao entrar na tela e impulsos percorrem a rede (JS) -->
+            <svg class="pub__brain brain" viewBox="0 0 270 205" aria-hidden="true" focusable="false">
+              <g class="brain__art">
+                <path class="brain__outline" pathLength="1" d="M26 102C20 78 30 60 46 48C66 32 96 24 128 22C162 20 194 26 216 42C236 56 248 78 246 102C244 120 234 130 220 134C206 138 196 138 188 142C176 154 158 164 134 164C112 164 96 158 88 148C84 142 88 134 96 130C84 128 68 130 56 128C40 124 30 116 26 102Z" />
+                <path class="brain__outline" pathLength="1" d="M192 144C194 158 208 168 224 164C240 160 246 146 238 134" />
+                <path class="brain__outline" pathLength="1" d="M166 160C168 171 166 181 163 190M184 152C186 165 184 178 181 190" />
+                <path class="brain__fold" pathLength="1" d="M96 130C118 120 144 114 166 110C182 108 196 104 208 96" />
+                <path class="brain__fold" pathLength="1" d="M140 22C136 38 144 52 136 68C130 80 134 92 128 104" />
+                <path class="brain__fold" pathLength="1" d="M44 70C54 62 66 64 72 72C78 80 90 80 96 72C102 64 112 64 118 70M36 96C46 88 58 90 64 98C70 106 82 106 90 98M66 46C74 54 86 52 92 44M100 40C106 50 118 50 124 42" />
+                <path class="brain__fold" pathLength="1" d="M160 30C164 42 176 46 186 40C194 34 204 38 208 46M156 70C166 80 182 80 192 72C200 66 212 68 218 76M150 46C154 56 150 62 156 70" />
+                <path class="brain__fold" pathLength="1" d="M220 92C228 98 236 98 242 92M214 116C222 120 232 120 238 114" />
+                <path class="brain__fold" pathLength="1" d="M112 144C126 136 142 136 154 142C164 148 176 146 184 138M126 156C140 152 154 154 164 158" />
+                <path class="brain__fold" pathLength="1" d="M202 151C212 157 226 155 236 147M208 160C218 163 228 160 236 155" />
+
+                <path class="brain__net" pathLength="1" d="M78 82Q96 60 124 56" />
+                <path class="brain__net" pathLength="1" d="M124 56Q148 48 172 60" />
+                <path class="brain__net" pathLength="1" d="M172 60Q198 66 214 90" />
+                <path class="brain__net" pathLength="1" d="M214 90Q202 114 178 124" />
+                <path class="brain__net" pathLength="1" d="M178 124Q152 134 128 126" />
+                <path class="brain__net" pathLength="1" d="M128 126Q108 120 100 102" />
+                <path class="brain__net" pathLength="1" d="M100 102Q84 96 78 82" />
+                <path class="brain__net" pathLength="1" d="M150 92Q134 76 124 56" />
+                <path class="brain__net" pathLength="1" d="M150 92Q168 104 178 124" />
+                <path class="brain__net" pathLength="1" d="M150 92Q124 94 100 102" />
+                <path class="brain__net" pathLength="1" d="M150 92Q184 86 214 90" />
+
+                <circle class="brain__node" cx="78" cy="82" r="1.8" />
+                <circle class="brain__node" cx="124" cy="56" r="1.8" />
+                <circle class="brain__node" cx="172" cy="60" r="1.8" />
+                <circle class="brain__node" cx="214" cy="90" r="1.8" />
+                <circle class="brain__node" cx="178" cy="124" r="1.8" />
+                <circle class="brain__node" cx="128" cy="126" r="1.8" />
+                <circle class="brain__node" cx="100" cy="102" r="1.8" />
+                <circle class="brain__node brain__node--hub" cx="150" cy="92" r="2.4" />
+                <g class="brain__pulses"></g>
+              </g>
+            </svg>
+
             <h2 class="section-label" id="publicacao-titulo">
               <span class="section-label__rule" aria-hidden="true"></span>Publicação
             </h2>
@@ -466,11 +504,13 @@
               Trabalho de Conclusão de Curso&nbsp;<span aria-hidden="true">·</span> Psicologia&nbsp;<span aria-hidden="true">·</span> UNIFIP
             </p>
 
-            <!-- EDITAR: substituir pelo título do trabalho -->
             <div class="pub__heading">
               <span class="pub__quote" aria-hidden="true">“</span>
-              <h3 class="pub__title"><cite>[Título do Trabalho de Conclusão de Curso]</cite></h3>
+              <h3 class="pub__title">
+                <cite>O impacto da dependência emocional nos relacionamentos amorosos tóxicos:</cite>
+              </h3>
             </div>
+            <p class="pub__subtitle">Um estudo de revisão integrativa</p>
 
             <div class="pub__rule" aria-hidden="true"></div>
 
@@ -515,7 +555,7 @@
             </p>
           </div>
 
-          <!-- EDITAR: respostas são sugestões; revisar com a Jennyfer (duração da sessão, frequência etc.) -->
+          <!-- EDITAR: respostas são sugestões; revisar com a Jennyfer -->
           <div class="faq__list">
             <details class="faq__item">
               <summary class="faq__question">
@@ -552,7 +592,7 @@
               </summary>
               <div class="faq__answer">
                 <p>
-                  Cada sessão dura cerca de 50 minutos. Em geral, os encontros são semanais, mas a frequência é
+                  Cada sessão dura 1 hora. Também há a opção de sessões de 30 minutos. A frequência dos encontros é
                   combinada de acordo com a sua necessidade.
                 </p>
               </div>
