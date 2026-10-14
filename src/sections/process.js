@@ -1,8 +1,8 @@
 import { gsap } from '../core/gsap.js';
 import { MOTION_CONDITIONS } from '../core/motion.js';
 import { revealFade, revealLines, revealUp } from '../core/reveal.js';
+import { cssVar } from '../core/css-var.js';
 
-const ACCENT = '#d27d5c';
 const SCROLL_PER_STEP = 0.8; // telas de rolagem por passo enquanto a seção está fixa
 
 export function initProcess() {
@@ -19,6 +19,7 @@ export function initProcess() {
   const progress = section.querySelector('.process__ring--progress');
   const ticks = gsap.utils.toArray('.process__tick', section); // topo, direita, base, esquerda
 
+  const accent = cssVar('--c-accent-light');
   const mm = gsap.matchMedia();
 
   mm.add(MOTION_CONDITIONS, (context) => {
@@ -70,7 +71,7 @@ export function initProcess() {
         .to(steps[i - 1], { opacity: 0, y: -24, duration: 0.3, ease: 'power2.in' }, at)
         .fromTo(step, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, at + 0.3)
         .to(strip, { yPercent: (-100 / steps.length) * i, ease: 'power3.inOut' }, at)
-        .to(ticks[i], { backgroundColor: ACCENT, borderColor: ACCENT, duration: 0.15 }, i - 0.05);
+        .to(ticks[i], { backgroundColor: accent, borderColor: accent, duration: 0.15 }, i - 0.05);
     });
 
     return () => section.classList.remove('is-pinned');

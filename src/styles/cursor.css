@@ -29,6 +29,6 @@
 
 .cursor.is-hover .cursor__ring {
   transform: scale(1.75);
-  border-color: rgb(210 125 92 / 0.6);
-  background-color: rgb(210 125 92 / 0.06);
+  border-color: rgb(var(--accent-light-rgb) / 0.7);
+  background-color: rgb(var(--accent-rgb) / 0.06);
 }

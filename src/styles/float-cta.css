@@ -63,10 +63,10 @@
 
 @keyframes cta-halo {
   0% {
-    box-shadow: 0 0 0 0 rgb(210 125 92 / 0.5);
+    box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0.5);
   }
   65%,
   100% {
-    box-shadow: 0 0 0 18px rgb(210 125 92 / 0);
+    box-shadow: 0 0 0 18px rgb(var(--accent-rgb) / 0);
   }
 }

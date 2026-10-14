@@ -10,6 +10,7 @@ import {
   Vector3,
   WebGLRenderer,
 } from 'three';
+import { cssVar } from '../core/css-var.js';
 
 const CAMERA_Z = 6;
 const FOV = 50;
@@ -134,8 +135,8 @@ export function createHeroParticles(container, hero) {
     uScroll: { value: 0 },
     uPointer: { value: new Vector2() },
     uOpacity: { value: 1 },
-    uIvory: { value: hexToVec3('#f3ede4') },
-    uAccent: { value: hexToVec3('#d27d5c') },
+    uIvory: { value: hexToVec3(cssVar('--c-ivory')) },
+    uAccent: { value: hexToVec3(cssVar('--c-accent-glow')) },
   };
 
   const material = new ShaderMaterial({

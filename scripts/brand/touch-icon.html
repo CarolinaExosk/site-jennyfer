@@ -10,6 +10,7 @@
     <title>Ícone</title>
     <style>
       @import '/node_modules/@fontsource-variable/newsreader/opsz-italic.css';
+      @import '/src/styles/tokens.css';
 
       html,
       body {
@@ -22,11 +23,11 @@
         width: 180px;
         height: 180px;
         overflow: hidden;
-        background: radial-gradient(circle at 50% 60%, rgb(210 125 92 / 0.16), transparent 70%), #0d0d0f;
+        background: radial-gradient(circle at 50% 60%, rgb(var(--accent-rgb) / 0.3), transparent 70%), #0d0d0f;
       }
 
       span {
-        color: #d27d5c;
+        color: var(--c-accent-light);
         font-family: 'Newsreader Variable', serif;
         font-size: 138px;
         font-style: italic;

@@ -52,7 +52,7 @@
 .timeline__progress {
   position: absolute;
   inset: 0;
-  background: var(--c-accent);
+  background: var(--c-accent-light);
   transform-origin: top center;
 }
 
@@ -83,9 +83,9 @@
 }
 
 .timeline__item.is-active .timeline__node {
-  border-color: var(--c-accent);
-  background: var(--c-accent);
-  box-shadow: 0 0 0 6px rgb(210 125 92 / 0.12);
+  border-color: var(--c-accent-light);
+  background: var(--c-accent-light);
+  box-shadow: 0 0 0 6px rgb(var(--accent-light-rgb) / 0.14);
 }
 
 .timeline__period {
@@ -98,7 +98,7 @@
 }
 
 .timeline__now {
-  color: var(--c-accent);
+  color: var(--c-accent-light);
 }
 
 .timeline__role {
@@ -154,5 +154,5 @@
 }
 
 .timeline__note.is-active::before {
-  border-color: var(--c-accent);
+  border-color: var(--c-accent-light);
 }

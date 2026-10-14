@@ -12,6 +12,7 @@
       @import '/node_modules/@fontsource-variable/newsreader/opsz.css';
       @import '/node_modules/@fontsource-variable/newsreader/opsz-italic.css';
       @import '/node_modules/@fontsource-variable/manrope/wght.css';
+      @import '/src/styles/tokens.css';
 
       html,
       body {
@@ -33,7 +34,7 @@
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(45% 70% at 8% 105%, rgb(210 125 92 / 0.2), transparent 70%),
+          radial-gradient(45% 70% at 8% 105%, rgb(var(--accent-rgb) / 0.3), transparent 70%),
           radial-gradient(40% 55% at 72% 20%, rgb(243 237 228 / 0.05), transparent 70%);
       }
 
@@ -78,7 +79,7 @@
         content: '';
         width: 48px;
         height: 1px;
-        background: #d27d5c;
+        background: var(--c-accent-light);
       }
 
       .name {

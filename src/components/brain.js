@@ -1,11 +1,11 @@
 import { gsap, ScrollTrigger } from '../core/gsap.js';
+import { cssVar } from '../core/css-var.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
-const GLOW = '#e09474';
 const MAX_PULSES = 3;
 
 // Cérebro em traço fino: desenha-se ao entrar na tela e, depois, pequenos impulsos
-// terracota percorrem a rede de conexões, devagar, acendendo de leve o ponto de chegada.
+// cor de vinho percorrem a rede de conexões, devagar, acendendo de leve o ponto de chegada.
 // Só roda com o cérebro visível. Retorna uma função que desfaz tudo.
 export function animateBrain(svg, { trigger = svg } = {}) {
   const strokes = svg.querySelectorAll('.brain__outline, .brain__fold');
@@ -13,6 +13,8 @@ export function animateBrain(svg, { trigger = svg } = {}) {
   const nodes = gsap.utils.toArray('.brain__node', svg);
   const pulseLayer = svg.querySelector('.brain__pulses');
   const art = svg.querySelector('.brain__art');
+
+  const glow = cssVar('--c-accent-glow');
 
   // Cor original de cada ponto (para voltar a ela depois do brilho)
   const baseFill = new Map(nodes.map((node) => [node, getComputedStyle(node).fill]));
@@ -79,7 +81,7 @@ export function animateBrain(svg, { trigger = svg } = {}) {
       // O ponto de chegada acende e volta devagar à cor original (nada piscando)
       .fromTo(
         target,
-        { fill: GLOW },
+        { fill: glow },
         { fill: baseFill.get(target), duration: 1.6, ease: 'power2.out', overwrite: 'auto', clearProps: 'fill' },
         duration - 0.2,
       );

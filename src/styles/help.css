@@ -111,12 +111,12 @@
 
 .help__card::before {
   z-index: -1;
-  background: radial-gradient(26rem circle at var(--mx) var(--my), rgb(210 125 92 / 0.11), transparent 60%);
+  background: radial-gradient(26rem circle at var(--mx) var(--my), rgb(var(--accent-rgb) / 0.11), transparent 60%);
 }
 
 .help__card::after {
   padding: 1px;
-  background: radial-gradient(18rem circle at var(--mx) var(--my), rgb(210 125 92 / 0.65), transparent 70%);
+  background: radial-gradient(18rem circle at var(--mx) var(--my), rgb(var(--accent-light-rgb) / 0.6), transparent 70%);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);

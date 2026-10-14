@@ -106,8 +106,8 @@ html:not(.js) .faq__item[open] .faq__icon::after {
 
 .faq__item.is-open .faq__icon,
 html:not(.js) .faq__item[open] .faq__icon {
-  border-color: var(--c-accent);
-  color: var(--c-accent);
+  border-color: var(--c-accent-light);
+  color: var(--c-accent-light);
 }
 
 @media (hover: hover) {
@@ -116,7 +116,7 @@ html:not(.js) .faq__item[open] .faq__icon {
   }
 
   .faq__question:hover .faq__icon {
-    border-color: rgb(210 125 92 / 0.6);
+    border-color: rgb(var(--accent-light-rgb) / 0.6);
   }
 }
 
@@ -134,7 +134,7 @@ html:not(.js) .faq__item[open] .faq__icon {
 .faq__answer a {
   color: var(--c-ivory);
   text-decoration: underline;
-  text-decoration-color: var(--c-accent);
+  text-decoration-color: var(--c-accent-light);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }

@@ -22,7 +22,7 @@
   position: absolute;
   inset: 0 -15% 5%;
   z-index: -1;
-  background: radial-gradient(closest-side at 50% 42%, rgb(210 125 92 / 0.13), transparent);
+  background: radial-gradient(closest-side at 50% 42%, rgb(var(--accent-rgb) / 0.13), transparent);
   pointer-events: none;
 }
 
@@ -95,7 +95,7 @@
   bottom: 0.2em;
   left: 0;
   width: 1px;
-  background: var(--c-accent);
+  background: var(--c-accent-light);
   transform: scaleY(var(--line));
   transform-origin: top center;
 }

@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-/* Brilho terracota atrás da chamada: cresce com a rolagem (JS), sem repetir */
+/* Brilho cor de vinho atrás da chamada: cresce com a rolagem (JS), sem repetir */
 .contact__glow {
   position: absolute;
   top: 50%;
@@ -16,7 +16,7 @@
   width: min(130vw, 72rem);
   aspect-ratio: 1;
   translate: -50% -50%;
-  background: radial-gradient(closest-side, rgb(210 125 92 / 0.16), rgb(210 125 92 / 0.05) 55%, transparent);
+  background: radial-gradient(closest-side, rgb(var(--accent-rgb) / 0.16), rgb(var(--accent-rgb) / 0.05) 55%, transparent);
   pointer-events: none;
 }
 

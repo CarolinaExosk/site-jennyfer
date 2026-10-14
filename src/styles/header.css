@@ -42,7 +42,7 @@
   right: 0;
   bottom: -0.35rem;
   height: 1px;
-  background: var(--c-accent);
+  background: var(--c-accent-light);
   transform: scaleX(0);
   transform-origin: right center;
   transition: transform 0.6s var(--ease-out);

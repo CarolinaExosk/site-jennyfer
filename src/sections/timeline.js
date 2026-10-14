@@ -2,7 +2,7 @@ import { gsap, ScrollTrigger } from '../core/gsap.js';
 import { MOTION_CONDITIONS } from '../core/motion.js';
 import { revealFade, revealLines, revealUp } from '../core/reveal.js';
 
-// Altura da tela em que a ponta da linha terracota fica enquanto se desenha
+// Altura da tela em que a ponta da linha cor de vinho fica enquanto se desenha
 const LINE_TIP = '70%';
 
 export function initTimeline() {
@@ -49,7 +49,7 @@ export function initTimeline() {
     revealLines(title, { trigger: section, start: 'top 80%', delay: 0.1 });
     revealUp(intro, { trigger: section, start: 'top 80%', delay: 0.3 });
 
-    // A linha terracota se desenha acompanhando a rolagem
+    // A linha cor de vinho se desenha acompanhando a rolagem
     gsap.fromTo(
       progress,
       { scaleY: 0 },
