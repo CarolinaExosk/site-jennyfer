@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+  Modelo do ícone (public/apple-touch-icon.png 180×180 e public/favicon-32.png).
+  Para gerar de novo: abra /scripts/brand/touch-icon.html numa janela de 180×180 e capture a tela;
+  o favicon-32.png é a mesma imagem reduzida para 32×32.
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ícone</title>
+    <style>
+      @import '/node_modules/@fontsource-variable/newsreader/opsz-italic.css';
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      body {
+        display: grid;
+        place-items: center;
+        width: 180px;
+        height: 180px;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 60%, rgb(210 125 92 / 0.16), transparent 70%), #0d0d0f;
+      }
+
+      span {
+        color: #d27d5c;
+        font-family: 'Newsreader Variable', serif;
+        font-size: 138px;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1;
+        translate: -4px 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <span>J</span>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<!--
+  Modelo da imagem de compartilhamento (public/og-image.jpg, 1200×630).
+  Para gerar de novo: com `npm run dev` rodando, abra /scripts/brand/og-image.html
+  numa janela de 1200×630 (DevTools → modo dispositivo) e capture a tela.
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Imagem de compartilhamento</title>
+    <style>
+      @import '/node_modules/@fontsource-variable/newsreader/opsz.css';
+      @import '/node_modules/@fontsource-variable/newsreader/opsz-italic.css';
+      @import '/node_modules/@fontsource-variable/manrope/wght.css';
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      body {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #0d0d0f;
+        color: #f3ede4;
+        font-family: 'Manrope Variable', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .glow {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(45% 70% at 8% 105%, rgb(210 125 92 / 0.2), transparent 70%),
+          radial-gradient(40% 55% at 72% 20%, rgb(243 237 228 / 0.05), transparent 70%);
+      }
+
+      .photo {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 520px;
+        height: 630px;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 14%;
+        mix-blend-mode: lighten;
+        mask-image:
+          radial-gradient(ellipse 50% 70% at 46% 44%, #000 40%, transparent 100%),
+          linear-gradient(to bottom, transparent 0%, #000 22%, #000 66%, transparent 98%);
+        mask-composite: intersect;
+      }
+
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 84px;
+        translate: 0 -52%;
+      }
+
+      .role {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .role::before {
+        content: '';
+        width: 48px;
+        height: 1px;
+        background: #d27d5c;
+      }
+
+      .name {
+        margin-top: 30px;
+        font-family: 'Newsreader Variable', serif;
+        font-size: 120px;
+        font-weight: 200;
+        line-height: 0.9;
+        letter-spacing: -0.02em;
+      }
+
+      .name em {
+        display: block;
+        padding-left: 0.6em;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      .sub {
+        margin-top: 34px;
+        color: #d2ccc3;
+        font-family: 'Newsreader Variable', serif;
+        font-size: 30px;
+        font-style: italic;
+      }
+
+      .crp {
+        position: absolute;
+        bottom: 54px;
+        left: 84px;
+        color: #9a948c;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="photo"><img src="/img/jennyfer-737.webp" alt="" /></div>
+    <div class="text">
+      <div class="role">Psicóloga Clínica</div>
+      <div class="name">Jennyfer<em>Brito Dias</em></div>
+      <div class="sub">Terapia Cognitivo-Comportamental</div>
+    </div>
+    <div class="crp">CRP 13/11710 · Atendimento online</div>
+  </body>
+</html>

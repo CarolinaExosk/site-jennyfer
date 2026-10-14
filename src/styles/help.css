@@ -1,0 +1,156 @@
+/* EM QUE POSSO AJUDAR */
+.help {
+  padding-block: clamp(5rem, 3rem + 9vw, 10rem);
+}
+
+.help__head {
+  display: grid;
+  align-items: end;
+  gap: 1.5rem 4rem;
+}
+
+.help__title {
+  margin-top: 1.5rem;
+  font-size: var(--fs-h2);
+}
+
+.help__intro {
+  max-width: 30rem;
+}
+
+@media (min-width: 64rem) {
+  .help__head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 26rem);
+  }
+}
+
+/* Grade: 1 coluna no celular, 2 no tablet, 3 + 2 no desktop */
+.help__grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 40rem) {
+  .help__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .help__card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .help__grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .help__card {
+    grid-column: span 2;
+  }
+
+  .help__card:nth-child(n + 4) {
+    grid-column: span 3;
+  }
+}
+
+/* Card */
+.help__card {
+  --mx: 50%; /* posição do mouse dentro do card (definida pelo JS) */
+  --my: 0%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 2.4vw, 2.25rem) clamp(1.5rem, 2.4vw, 2.25rem) clamp(2rem, 3vw, 2.75rem);
+  border: 1px solid var(--c-line);
+  border-radius: 1rem;
+  background: rgb(243 237 228 / 0.018);
+  isolation: isolate;
+  overflow: hidden;
+  transition: border-color 0.7s var(--ease-out);
+}
+
+.help__card-number {
+  color: var(--c-muted);
+  font-family: var(--ff-display);
+  font-size: 1.125rem;
+  font-variant-numeric: lining-nums;
+  line-height: 1;
+}
+
+/* Títulos a uma distância fixa do topo: ficam alinhados entre cards da mesma linha */
+.help__card-title {
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(1.75rem, 1.3rem + 1.3vw, 2.5rem);
+  transition: transform 0.8s var(--ease-out);
+}
+
+.help__card-text {
+  max-width: 30rem;
+  margin-top: 0.75rem;
+  color: var(--c-muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  transition: color 0.7s var(--ease-out);
+}
+
+/* Hover (só com mouse): luz suave que segue o cursor + borda que acende perto dele */
+.help__card::before,
+.help__card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out);
+}
+
+.help__card::before {
+  z-index: -1;
+  background: radial-gradient(26rem circle at var(--mx) var(--my), rgb(210 125 92 / 0.11), transparent 60%);
+}
+
+.help__card::after {
+  padding: 1px;
+  background: radial-gradient(18rem circle at var(--mx) var(--my), rgb(210 125 92 / 0.65), transparent 70%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+}
+
+@media (hover: hover) {
+  .help__card:hover {
+    border-color: rgb(243 237 228 / 0.16);
+  }
+
+  .help__card:hover::before,
+  .help__card:hover::after {
+    opacity: 1;
+  }
+
+  .help__card:hover .help__card-title {
+    transform: translateX(0.375rem);
+  }
+
+  .help__card:hover .help__card-text {
+    color: var(--c-text);
+  }
+}
+
+/* Convite ao final */
+.help__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--c-muted);
+}

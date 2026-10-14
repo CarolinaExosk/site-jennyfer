@@ -1,0 +1,271 @@
+/* COMO FUNCIONA
+   Padrão (sem JS ou com "reduzir movimento"): os 4 passos em lista.
+   Com animação, o JS adiciona .is-pinned: a seção fica fixa e os passos trocam com a rolagem. */
+
+.process {
+  position: relative;
+  overflow-x: clip; /* o brilho do mostrador passa da borda da tela no celular */
+}
+
+.process__panel {
+  padding-block: clamp(5rem, 3rem + 9vw, 10rem);
+}
+
+.process__title {
+  margin-top: 1.5rem;
+  font-size: var(--fs-h2);
+}
+
+.process__content {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.process__steps {
+  padding: 0;
+  list-style: none;
+}
+
+.process__step {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  column-gap: clamp(1rem, 3vw, 2.5rem);
+  padding-block: 2rem;
+  border-top: 1px solid var(--c-line);
+}
+
+.process__step:last-child {
+  border-bottom: 1px solid var(--c-line);
+}
+
+.process__step-number {
+  grid-row: span 2;
+  padding-top: 0.3rem;
+  color: var(--c-accent);
+  font-family: var(--ff-display);
+  font-size: 1.75rem;
+  font-variant-numeric: lining-nums;
+  line-height: 1;
+}
+
+.process__step-title {
+  font-size: var(--fs-h3);
+}
+
+.process__step-text {
+  max-width: 34rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 64rem) {
+  .process__step {
+    grid-template-columns: 5rem minmax(0, 5fr) minmax(0, 6fr);
+    align-items: baseline;
+  }
+
+  .process__step-number {
+    grid-row: auto;
+  }
+
+  .process__step-text {
+    margin-top: 0;
+  }
+}
+
+/* Mostrador (anel + número): só no modo fixo */
+.process__dial {
+  display: none;
+}
+
+/* ===== Modo fixo (pin) ===== */
+.process.is-pinned .process__panel {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  height: 100svh;
+  /* embaixo, folga para o botão flutuante não cobrir o texto */
+  padding-block: clamp(3rem, 8vh, 6rem) clamp(5.5rem, 11vh, 7rem);
+}
+
+.process.is-pinned .process__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'head dial'
+    'content content';
+  align-items: end;
+  column-gap: 1.5rem;
+}
+
+.process.is-pinned .process__head {
+  grid-area: head;
+}
+
+/* No celular o título divide a linha com o mostrador */
+.process.is-pinned .process__title {
+  font-size: clamp(2rem, 1.2rem + 3.5vw, 2.75rem);
+}
+
+.process.is-pinned .process__dial {
+  grid-area: dial;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(5.5rem, 24vw, 8rem);
+  aspect-ratio: 1;
+  isolation: isolate;
+  container-type: inline-size;
+}
+
+.process.is-pinned .process__content {
+  grid-area: content;
+  margin-top: clamp(2rem, 6vh, 3.5rem);
+}
+
+/* Os 4 passos ocupam a mesma célula; o JS controla qual aparece */
+.process.is-pinned .process__steps {
+  display: grid;
+}
+
+.process.is-pinned .process__step {
+  display: block;
+  grid-area: 1 / 1;
+  padding: 0;
+  border: 0;
+}
+
+.process.is-pinned .process__step-number {
+  display: none;
+}
+
+.process.is-pinned .process__step-title {
+  max-width: 12em;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 4rem);
+  line-height: 1.05;
+}
+
+.process.is-pinned .process__step-text {
+  max-width: 32rem;
+  margin-top: 1.25rem;
+}
+
+/* Brilho quente atrás do mostrador */
+.process__dial::before {
+  content: '';
+  position: absolute;
+  inset: -35%;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgb(210 125 92 / 0.12), transparent);
+  pointer-events: none;
+}
+
+/* Anel desenhado com CSS: espessura fixa em px em qualquer tamanho */
+.process__ring {
+  --stroke: 1px;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--stroke) - 0.6px), #000 calc(100% - var(--stroke)));
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--stroke) - 0.6px), #000 calc(100% - var(--stroke)));
+}
+
+.process__ring--track {
+  background: rgb(243 237 228 / 0.14);
+}
+
+.process__ring--progress {
+  --stroke: 1.5px;
+  --p: 0; /* 0 → 1, animado pela rolagem */
+  background: conic-gradient(var(--c-accent) calc(var(--p) * 1turn), transparent 0);
+}
+
+/* Marcas nos quartos do anel: acendem quando o progresso passa por elas */
+.process__tick {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  margin: -3.5px;
+  border: 1px solid rgb(243 237 228 / 0.4);
+  border-radius: 50%;
+  background: var(--c-bg);
+}
+
+.process__tick--top {
+  top: 0;
+  left: 50%;
+  border-color: var(--c-accent);
+  background: var(--c-accent);
+}
+
+.process__tick--right {
+  top: 50%;
+  left: 100%;
+}
+
+.process__tick--bottom {
+  top: 100%;
+  left: 50%;
+}
+
+.process__tick--left {
+  top: 50%;
+  left: 0;
+}
+
+/* Número do passo: uma fita com 01–04 que rola dentro de uma janela de 1em */
+.process__numbers {
+  display: block;
+  height: 1em;
+  overflow: clip;
+  color: var(--c-ivory);
+  font-family: var(--ff-display);
+  font-size: 40cqi;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.process__numbers-strip,
+.process__numbers-strip > span {
+  display: block;
+}
+
+.process__numbers-strip > span {
+  height: 1em;
+}
+
+/* Desktop: mostrador grande à esquerda; título e passo à direita */
+@media (min-width: 64rem) {
+  .process.is-pinned .process__inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'dial head'
+      'dial content';
+    align-items: initial;
+    column-gap: clamp(3rem, 7vw, 8rem);
+  }
+
+  .process.is-pinned .process__dial {
+    width: min(100%, 30rem, 58vh);
+    justify-self: center;
+    align-self: center;
+  }
+
+  .process.is-pinned .process__head {
+    align-self: end;
+  }
+
+  .process.is-pinned .process__title {
+    font-size: var(--fs-h2);
+  }
+
+  .process.is-pinned .process__content {
+    align-self: start;
+  }
+
+  .process__tick {
+    width: 9px;
+    height: 9px;
+    margin: -4.5px;
+  }
+}

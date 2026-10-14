@@ -1,0 +1,98 @@
+/* Botão principal (WhatsApp) */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 3.5rem;
+  padding-inline: 1.5rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition:
+    background-color 0.5s var(--ease-out),
+    transform 0.6s var(--ease-out),
+    box-shadow 0.6s var(--ease-out);
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-on-accent);
+}
+
+.btn--primary:hover {
+  background: var(--c-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -18px rgb(210 125 92 / 0.75);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn__icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.btn:hover .btn__icon {
+  transform: rotate(-10deg) scale(1.06);
+}
+
+/* Link de texto com sublinhado que se desenha no hover */
+.link-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-block: 0.5rem;
+  color: var(--c-ivory);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.link-line::before,
+.link-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.3rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.link-line::before {
+  opacity: 0.25;
+}
+
+.link-line::after {
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.8s var(--ease-out);
+}
+
+.link-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.link-line__icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.link-line:hover .link-line__icon {
+  transform: translateY(3px);
+}
+
+/* Link externo (abre em nova aba): seta diagonal */
+.link-line--external:hover .link-line__icon {
+  transform: translate(2px, -2px);
+}

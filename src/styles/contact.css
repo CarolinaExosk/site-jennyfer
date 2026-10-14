@@ -1,0 +1,92 @@
+/* CONTATO: chamada final, centralizada */
+.contact {
+  position: relative;
+  padding-block: clamp(7rem, 4rem + 12vw, 14rem);
+  overflow: clip;
+  isolation: isolate;
+  text-align: center;
+}
+
+/* Brilho terracota atrás da chamada: cresce com a rolagem (JS), sem repetir */
+.contact__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: min(130vw, 72rem);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: radial-gradient(closest-side, rgb(210 125 92 / 0.16), rgb(210 125 92 / 0.05) 55%, transparent);
+  pointer-events: none;
+}
+
+.contact__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__label {
+  justify-content: center;
+}
+
+.contact__label .section-label__rule:last-child {
+  transform-origin: right center;
+}
+
+.contact__title {
+  max-width: 14ch;
+  margin-top: 2rem;
+  font-size: clamp(2.75rem, 1.4rem + 5.4vw, 6.5rem);
+  line-height: 1.02;
+}
+
+.contact__title em {
+  font-style: italic;
+}
+
+.contact__text {
+  max-width: 30rem;
+  margin-top: 2rem;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem 2.5rem;
+  margin-top: 3rem;
+}
+
+.btn--large {
+  height: 4rem;
+  padding-inline: 1.75rem 2.25rem;
+  font-size: 1rem;
+}
+
+.contact__instagram .link-line__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.contact__instagram:hover .link-line__icon {
+  transform: none;
+}
+
+.contact__phone {
+  margin-top: 1.75rem;
+  color: var(--c-muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 30rem) {
+  .contact__actions {
+    width: 100%;
+  }
+
+  .contact__actions .btn {
+    width: 100%;
+  }
+}

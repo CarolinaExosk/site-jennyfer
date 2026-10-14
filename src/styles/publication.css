@@ -1,0 +1,119 @@
+/* PUBLICAÇÃO: um cartão editorial com o trabalho em destaque */
+.pub {
+  padding-block: clamp(4rem, 2rem + 7vw, 8rem);
+}
+
+.pub__card {
+  position: relative;
+  padding: clamp(2rem, 1rem + 4vw, 5rem);
+  border: 1px solid var(--c-line);
+  border-radius: 1.25rem;
+  background: rgb(243 237 228 / 0.015);
+  isolation: isolate;
+  overflow: hidden;
+  transition: border-color 0.8s var(--ease-out);
+}
+
+/* Luz quente vinda do canto superior direito; aumenta no hover */
+.pub__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(70% 90% at 100% 0%, rgb(210 125 92 / 0.12), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 0.8s var(--ease-out);
+}
+
+.pub__meta {
+  margin-top: 2rem;
+  color: var(--c-muted);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Título com aspas "penduradas" à esquerda, fora do alinhamento do texto */
+.pub__heading {
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+.pub__quote {
+  position: absolute;
+  top: -0.08em;
+  left: -0.5em;
+  color: var(--c-accent);
+  font-family: var(--ff-display);
+  font-size: clamp(3.5rem, 2rem + 5vw, 7rem);
+  font-style: italic;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+.pub__title {
+  max-width: 20ch;
+  font-size: clamp(2.125rem, 1.3rem + 3.2vw, 4.25rem);
+  line-height: 1.1;
+}
+
+.pub__title cite {
+  font-style: italic;
+}
+
+.pub__rule {
+  height: 1px;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  background: var(--c-line);
+  transform-origin: left center;
+}
+
+.pub__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-top: 1.75rem;
+}
+
+.pub__author {
+  color: var(--c-ivory);
+  line-height: 1.5;
+}
+
+.pub__author span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--c-muted);
+  font-size: 0.875rem;
+}
+
+/* O cartão inteiro é clicável (JS, só com mouse); o link continua sendo o alvo de teclado */
+.pub__card:focus-within {
+  border-color: rgb(210 125 92 / 0.35);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .js .pub__card {
+    cursor: pointer;
+  }
+
+  .pub__card:hover {
+    border-color: rgb(210 125 92 / 0.35);
+  }
+
+  .pub__card:hover::before {
+    opacity: 1;
+  }
+
+  .pub__card:hover .pub__link::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+
+  .pub__card:hover .pub__link .link-line__icon {
+    transform: translate(2px, -2px);
+  }
+}

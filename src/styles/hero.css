@@ -1,0 +1,273 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: var(--header-h);
+  isolation: isolate;
+  overflow: clip;
+}
+
+/* Fundo: névoa em CSS (sempre presente) + canvas das partículas (quando houver) */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Funde a base do hero com a seção seguinte */
+.hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, var(--c-bg));
+}
+
+.hero__fog {
+  position: absolute;
+  inset: -15% -10%;
+  background:
+    radial-gradient(40% 36% at 74% 30%, rgb(243 237 228 / 0.06), transparent 70%),
+    radial-gradient(36% 40% at 14% 76%, rgb(210 125 92 / 0.11), transparent 72%),
+    radial-gradient(55% 45% at 60% 108%, rgb(210 125 92 / 0.08), transparent 70%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__fog {
+    animation: fog-drift 40s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes fog-drift {
+  from {
+    transform: translate3d(-2%, 1.5%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2%, -1.5%, 0) scale(1.06);
+  }
+}
+
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 2.4s var(--ease-out);
+}
+
+.hero__canvas.is-visible {
+  opacity: 1;
+}
+
+/* Conteúdo */
+.hero__inner {
+  align-self: center;
+  padding-block: clamp(2rem, 6vh, 4rem);
+}
+
+.hero__title {
+  font-size: var(--fs-display);
+  font-weight: 200;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.js .hero__title {
+  visibility: hidden;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__line--italic {
+  padding-left: 0.85em;
+  font-style: italic;
+}
+
+.hero__body {
+  max-width: 40rem;
+  margin-top: clamp(2rem, 5vh, 3.25rem);
+}
+
+/* Subtítulo: por padrão (celular e coluna do desktop largo) o filete fica em cima
+   e as duas funções, uma por linha */
+.hero__subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  color: var(--c-ivory);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero__rule {
+  flex: none;
+  width: 3rem;
+  height: 1px;
+  background: var(--c-accent);
+  transform-origin: left center;
+}
+
+.hero__roles > span {
+  display: block;
+}
+
+.hero__roles > .hero__dot {
+  display: none;
+  margin-inline: 0.6em;
+  color: var(--c-accent);
+}
+
+.hero__lede {
+  max-width: 30ch;
+  margin-top: 1.25rem;
+  color: var(--c-text);
+  font-family: var(--ff-display);
+  font-size: var(--fs-lead);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+/* Tablet e desktop estreito: texto abaixo do nome, alinhado ao recuo de "Brito Dias" */
+@media (min-width: 48rem) and (max-width: 74.99rem) {
+  .hero__body {
+    margin-left: calc(var(--fs-display) * 0.85);
+  }
+
+  .hero__subtitle {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    letter-spacing: 0.2em;
+  }
+
+  .hero__roles > span,
+  .hero__roles > .hero__dot {
+    display: inline;
+  }
+}
+
+/* Desktop largo: o texto vira uma coluna à direita do nome, alinhada pela base */
+@media (min-width: 75rem) {
+  .hero__inner {
+    display: grid;
+    grid-template-columns: auto minmax(18rem, 26rem);
+    align-items: end;
+    justify-content: space-between;
+    column-gap: clamp(3rem, 5vw, 6rem);
+  }
+
+  /* Cada parte do nome numa linha só; a coluna da direita é que se ajusta */
+  .hero__line {
+    white-space: nowrap;
+  }
+
+  .hero__body {
+    margin-top: 0;
+    padding-bottom: 0.4rem;
+  }
+
+  .hero__subtitle {
+    letter-spacing: 0.2em;
+  }
+
+  .hero__lede {
+    font-size: clamp(1.5rem, 1rem + 0.8vw, 1.875rem);
+  }
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: 2.25rem;
+}
+
+@media (max-width: 30rem) {
+  .hero__actions .btn {
+    width: 100%;
+  }
+}
+
+/* Rodapé do hero: CRP + indicação de rolagem */
+.hero__meta {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: max(1.75rem, env(safe-area-inset-bottom));
+}
+
+.hero__crp {
+  color: var(--c-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scroll-cue__label {
+  color: var(--c-muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.scroll-cue__line {
+  position: relative;
+  width: 1px;
+  height: 3.5rem;
+  overflow: hidden;
+  background: rgb(243 237 228 / 0.15);
+}
+
+.scroll-cue__line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c-ivory);
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-cue__line::after {
+    animation: scroll-cue 2.8s var(--ease-in-out) infinite;
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .scroll-cue {
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+/* Newsreader enxuta (gerada por scripts/subset-fonts.py a partir do pacote Fontsource):
+   pesos 200–400 e tamanho óptico 12–72, que o navegador ajusta conforme o tamanho do texto. */
+@font-face {
+  font-family: 'Newsreader Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 400;
+  src: url('../assets/fonts/newsreader-normal.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Newsreader Variable';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 400;
+  src: url('../assets/fonts/newsreader-italic.woff2') format('woff2-variations');
+}

@@ -1,0 +1,158 @@
+/* TRAJETÓRIA */
+.timeline {
+  padding-block: clamp(5rem, 3rem + 9vw, 10rem);
+}
+
+.timeline__inner {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.timeline__title {
+  margin-top: 1.5rem;
+  font-size: var(--fs-h2);
+}
+
+.timeline__intro {
+  max-width: 26rem;
+  margin-top: 1.5rem;
+}
+
+/* Desktop: o título fica parado enquanto a lista rola ao lado */
+@media (min-width: 64rem) {
+  .timeline__inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+  }
+
+  .timeline__head {
+    position: sticky;
+    top: 22vh;
+  }
+}
+
+/* Corpo: trilho à esquerda, marcos e textos à direita */
+.timeline__body {
+  --pad: clamp(2.25rem, 4vw, 3.5rem); /* recuo do texto em relação ao trilho */
+  --rail: 5px; /* posição do trilho */
+  position: relative;
+  padding-left: var(--pad);
+}
+
+/* Trilho: o JS ajusta início e fim para ligar o primeiro marco ao último */
+.timeline__track {
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: var(--rail);
+  width: 1px;
+  background: rgb(243 237 228 / 0.12);
+}
+
+.timeline__progress {
+  position: absolute;
+  inset: 0;
+  background: var(--c-accent);
+  transform-origin: top center;
+}
+
+.timeline__list {
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: clamp(2.75rem, 5vw, 4rem);
+}
+
+/* Marco: acende quando a linha chega nele (classe .is-active) */
+.timeline__node {
+  position: absolute;
+  top: 5px;
+  left: calc(var(--rail) + 0.5px - 5.5px - var(--pad));
+  width: 11px;
+  height: 11px;
+  border: 1px solid rgb(243 237 228 / 0.35);
+  border-radius: 50%;
+  background: var(--c-bg);
+  transition:
+    background-color 0.6s var(--ease-out),
+    border-color 0.6s var(--ease-out),
+    box-shadow 0.9s var(--ease-out);
+}
+
+.timeline__item.is-active .timeline__node {
+  border-color: var(--c-accent);
+  background: var(--c-accent);
+  box-shadow: 0 0 0 6px rgb(210 125 92 / 0.12);
+}
+
+.timeline__period {
+  color: var(--c-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.timeline__now {
+  color: var(--c-accent);
+}
+
+.timeline__role {
+  margin-top: 0.75rem;
+  font-size: clamp(1.75rem, 1.35rem + 1.3vw, 2.5rem);
+}
+
+.timeline__org {
+  margin-top: 0.5rem;
+  color: var(--c-ivory);
+  font-size: 1.0625rem;
+}
+
+.timeline__meta {
+  margin-top: 0.25rem;
+  color: var(--c-muted);
+  font-size: 0.9375rem;
+}
+
+.timeline__desc {
+  max-width: 30rem;
+  margin-top: 0.9rem;
+}
+
+/* Fecho: formação, com um marco vazado no fim do trilho */
+.timeline__note {
+  position: relative;
+  color: var(--c-text);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+.timeline__note > span {
+  display: block;
+}
+
+.timeline__note-crp {
+  color: var(--c-muted);
+}
+
+.timeline__note::before {
+  content: '';
+  position: absolute;
+  top: calc(0.85em - 4.5px);
+  left: calc(var(--rail) + 0.5px - 4.5px - var(--pad));
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgb(243 237 228 / 0.35);
+  border-radius: 50%;
+  background: var(--c-bg);
+  transition: border-color 0.6s var(--ease-out);
+}
+
+.timeline__note.is-active::before {
+  border-color: var(--c-accent);
+}

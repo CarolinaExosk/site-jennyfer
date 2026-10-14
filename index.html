@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Jennyfer Brito Dias · Psicóloga Clínica (TCC) · CRP 13/11710</title>
+    <meta
+      name="description"
+      content="Psicóloga clínica com abordagem em Terapia Cognitivo-Comportamental (TCC). Atendimento online, com escuta, acolhimento e respeito ao seu ritmo. CRP 13/11710."
+    />
+    <meta name="author" content="Jennyfer Brito Dias" />
+    <meta name="theme-color" content="#0d0d0f" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- %VITE_SITE_URL% vem do arquivo .env (trocar pelo domínio real antes de publicar) -->
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Compartilhamento (WhatsApp, Instagram, Facebook, LinkedIn…) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Jennyfer Brito Dias · Psicóloga Clínica" />
+    <meta property="og:title" content="Jennyfer Brito Dias · Psicóloga Clínica (TCC)" />
+    <meta
+      property="og:description"
+      content="Psicóloga clínica com abordagem em Terapia Cognitivo-Comportamental. Atendimento online, com escuta, acolhimento e respeito ao seu ritmo. CRP 13/11710."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jennyfer Brito Dias, psicóloga clínica, em retrato em preto e branco ao lado do seu nome." />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Dados estruturados: profissional de saúde (pessoa + atendimento) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "%VITE_SITE_URL%/#site",
+            "url": "%VITE_SITE_URL%/",
+            "name": "Jennyfer Brito Dias · Psicóloga Clínica",
+            "inLanguage": "pt-BR"
+          },
+          {
+            "@type": "Person",
+            "@id": "%VITE_SITE_URL%/#jennyfer",
+            "name": "Jennyfer Brito Dias",
+            "jobTitle": "Psicóloga Clínica",
+            "url": "%VITE_SITE_URL%/",
+            "image": "%VITE_SITE_URL%/og-image.jpg",
+            "sameAs": ["https://instagram.com/psi.jennyferbrito"],
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "UNIFIP" },
+            "hasCredential": {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Registro profissional",
+              "name": "CRP 13/11710",
+              "recognizedBy": { "@type": "Organization", "name": "Conselho Regional de Psicologia da 13ª Região" }
+            },
+            "knowsAbout": ["Terapia Cognitivo-Comportamental", "Psicologia clínica", "Ansiedade", "Relacionamentos"]
+          },
+          {
+            "@type": "MedicalBusiness",
+            "@id": "%VITE_SITE_URL%/#atendimento",
+            "name": "Jennyfer Brito Dias · Psicologia Clínica",
+            "description": "Psicoterapia com abordagem em Terapia Cognitivo-Comportamental (TCC), com atendimento online.",
+            "url": "%VITE_SITE_URL%/",
+            "image": "%VITE_SITE_URL%/og-image.jpg",
+            "telephone": "+55 84 99918-0458",
+            "areaServed": { "@type": "Country", "name": "Brasil" },
+            "availableLanguage": "pt-BR",
+            "founder": { "@id": "%VITE_SITE_URL%/#jennyfer" },
+            "sameAs": ["https://instagram.com/psi.jennyferbrito"]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Fontes do primeiro quadro (hero): pré-carregadas para a animação começar sem troca de fonte -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/src/assets/fonts/newsreader-normal.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/src/assets/fonts/newsreader-italic.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2" />
+
+    <link rel="stylesheet" href="/src/styles/main.css" />
+
+    <!-- Marca que o JS está ativo (esconde o que será animado). Se o JS falhar, o conteúdo reaparece. -->
+    <script>
+      document.documentElement.classList.add('js');
+      setTimeout(function () {
+        if (!window.__siteReady) document.documentElement.classList.remove('js');
+      }, 4000);
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <!-- Ícones reutilizados -->
+    <svg xmlns="http://www.w3.org/2000/svg" hidden>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m0 0-6-6m6 6 6-6" />
+      </symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8.5 7H17v8.5" />
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+        </g>
+        <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" data-reveal>
+      <div class="site-header__inner container">
+        <a class="brand" href="#topo" aria-label="Jennyfer Brito Dias, voltar ao início">
+          Jennyfer Brito Dias
+        </a>
+        <nav class="site-nav" aria-label="Seções do site">
+          <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#trajetoria">Trajetória</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- 1. HERO -->
+      <section class="hero" id="topo" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__fog"></div>
+          <!-- O canvas das partículas (Three.js) é inserido aqui quando o aparelho aguenta -->
+        </div>
+
+        <div class="hero__inner container">
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line">Jennyfer</span>
+            <span class="hero__line hero__line--italic">Brito Dias</span>
+          </h1>
+
+          <div class="hero__body">
+            <p class="hero__subtitle" data-reveal>
+              <span class="hero__rule" aria-hidden="true"></span>
+              <span class="hero__roles">
+                <span>Psicóloga Clínica</span>
+                <span class="hero__dot" aria-hidden="true">·</span>
+                <span>Terapia Cognitivo-Comportamental</span>
+              </span>
+            </p>
+
+            <p class="hero__lede" data-reveal>
+              Um espaço de escuta e acolhimento, para você caminhar no seu ritmo.
+            </p>
+
+            <div class="hero__actions" data-reveal>
+              <a
+                class="btn btn--primary"
+                href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+                target="_blank"
+                rel="noopener"
+                data-hero-cta
+              >
+                <svg class="btn__icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+                <span>Agendar conversa</span>
+                <span class="visually-hidden">pelo WhatsApp (abre em nova aba)</span>
+              </a>
+              <a class="link-line" href="#sobre">
+                Conheça meu trabalho
+                <svg class="link-line__icon" aria-hidden="true"><use href="#i-arrow-down" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__meta container" data-reveal>
+          <p class="hero__crp">CRP 13/11710 <span aria-hidden="true">·</span> Atendimento online</p>
+          <div class="scroll-cue" aria-hidden="true">
+            <span class="scroll-cue__label">Role</span>
+            <span class="scroll-cue__line"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. SOBRE -->
+      <section class="about" id="sobre" aria-labelledby="sobre-titulo">
+        <div class="about__inner container">
+          <figure class="about__media">
+            <div class="about__photo">
+              <img
+                src="/img/jennyfer-737.webp"
+                srcset="/img/jennyfer-480.webp 480w, /img/jennyfer-737.webp 737w"
+                sizes="(min-width: 64rem) min(40vw, 34rem), 92vw"
+                width="737"
+                height="921"
+                loading="lazy"
+                decoding="async"
+                alt="Retrato em preto e branco de Jennyfer Brito Dias, sentada diante de uma janela em um dia de chuva, olhando para a câmera com a mão apoiada junto ao rosto."
+              />
+            </div>
+          </figure>
+
+          <div class="about__content">
+            <p class="section-label"><span class="section-label__rule" aria-hidden="true"></span>Sobre mim</p>
+
+            <h2 class="about__title" id="sobre-titulo">
+              Sou psicóloga clínica e atuo com a
+              <em>Terapia <span class="nowrap">Cognitivo-Comportamental</span></em> (TCC).
+            </h2>
+
+            <div class="about__text">
+              <p>
+                Meu trabalho é ajudar você a identificar a origem das suas dificuldades, melhorar suas relações,
+                lidar com emoções difíceis e construir uma vida com mais sentido.
+              </p>
+              <p>
+                Atendo pessoas de diferentes idades e histórias. Acredito que você é a pessoa mais importante
+                dentro do consultório e merece ser tratada com dignidade e respeito em todas as sessões. Uma
+                relação de confiança é a base do processo terapêutico.
+              </p>
+            </div>
+
+            <p class="about__closing">
+              Aqui, você conduz o seu tratamento: eu sou a guia que escuta e caminha no seu ritmo.
+            </p>
+
+            <dl class="about__facts">
+              <div>
+                <dt>Formação</dt>
+                <dd>Psicologia · UNIFIP</dd>
+              </div>
+              <div>
+                <dt>Registro</dt>
+                <dd>CRP 13/11710</dd>
+              </div>
+              <div>
+                <dt>Abordagem</dt>
+                <dd><abbr title="Terapia Cognitivo-Comportamental">TCC</abbr></dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. COMO FUNCIONA (fica fixa na tela enquanto os passos trocam com a rolagem) -->
+      <section class="process" id="como-funciona" aria-labelledby="processo-titulo">
+        <div class="process__panel">
+          <div class="process__inner container">
+            <div class="process__head">
+              <p class="section-label"><span class="section-label__rule" aria-hidden="true"></span>TCC em 4 passos</p>
+              <h2 class="process__title" id="processo-titulo">Como funciona a terapia</h2>
+            </div>
+
+            <!-- Mostrador: anel de progresso + número do passo (decorativo) -->
+            <div class="process__dial" aria-hidden="true">
+              <span class="process__ring process__ring--track"></span>
+              <span class="process__ring process__ring--progress"></span>
+              <span class="process__tick process__tick--top"></span>
+              <span class="process__tick process__tick--right"></span>
+              <span class="process__tick process__tick--bottom"></span>
+              <span class="process__tick process__tick--left"></span>
+              <span class="process__numbers">
+                <span class="process__numbers-strip">
+                  <span>01</span><span>02</span><span>03</span><span>04</span>
+                </span>
+              </span>
+            </div>
+
+            <!-- EDITAR: textos dos passos são sugestões; revisar com a Jennyfer -->
+            <div class="process__content">
+              <ol class="process__steps">
+                <li class="process__step">
+                  <span class="process__step-number" aria-hidden="true">01</span>
+                  <h3 class="process__step-title">Escuta e avaliação</h3>
+                  <p class="process__step-text">
+                    Nos primeiros encontros, conversamos sobre o que trouxe você até aqui, a sua história e o que
+                    você espera da terapia, com escuta atenta e sem julgamentos.
+                  </p>
+                </li>
+                <li class="process__step">
+                  <span class="process__step-number" aria-hidden="true">02</span>
+                  <h3 class="process__step-title">Identificação de padrões</h3>
+                  <p class="process__step-text">
+                    Juntos, observamos como pensamentos, emoções e comportamentos se conectam no seu dia a dia e
+                    quais padrões podem estar contribuindo para as dificuldades.
+                  </p>
+                </li>
+                <li class="process__step">
+                  <span class="process__step-number" aria-hidden="true">03</span>
+                  <h3 class="process__step-title">Estratégias práticas</h3>
+                  <p class="process__step-text">
+                    Construímos estratégias e exercícios para você experimentar entre as sessões, sempre
+                    adaptados à sua realidade e ao seu ritmo.
+                  </p>
+                </li>
+                <li class="process__step">
+                  <span class="process__step-number" aria-hidden="true">04</span>
+                  <h3 class="process__step-title">Acompanhamento da evolução</h3>
+                  <p class="process__step-text">
+                    Revisamos o processo regularmente e ajustamos o caminho quando necessário. Os objetivos são
+                    definidos e reavaliados em conjunto.
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. EM QUE POSSO AJUDAR -->
+      <section class="help" id="em-que-posso-ajudar" aria-labelledby="ajuda-titulo">
+        <div class="container">
+          <div class="help__head">
+            <div>
+              <p class="section-label"><span class="section-label__rule" aria-hidden="true"></span>Áreas de atuação</p>
+              <h2 class="help__title" id="ajuda-titulo">Em que posso ajudar</h2>
+            </div>
+            <p class="help__intro">
+              Cada pessoa chega com uma história única. Estes são alguns dos temas que costumam aparecer no
+              consultório e que podemos olhar juntos, com cuidado.
+            </p>
+          </div>
+
+          <!-- EDITAR: as descrições dos cards são sugestões; revisar com a Jennyfer -->
+          <ul class="help__grid" role="list">
+            <li class="help__card">
+              <span class="help__card-number" aria-hidden="true">01</span>
+              <h3 class="help__card-title">Ansiedade</h3>
+              <p class="help__card-text">
+                Preocupação constante, tensão, pensamentos acelerados e a sensação de estar sempre em alerta.
+              </p>
+            </li>
+            <li class="help__card">
+              <span class="help__card-number" aria-hidden="true">02</span>
+              <h3 class="help__card-title">Insegurança</h3>
+              <p class="help__card-text">
+                Dúvidas sobre si, medo de errar, autocrítica intensa e dificuldade de confiar nas próprias escolhas.
+              </p>
+            </li>
+            <li class="help__card">
+              <span class="help__card-number" aria-hidden="true">03</span>
+              <h3 class="help__card-title">Relacionamentos</h3>
+              <p class="help__card-text">
+                Conflitos, dificuldade de se expressar e de colocar limites, e padrões que se repetem nas relações.
+              </p>
+            </li>
+            <li class="help__card">
+              <span class="help__card-number" aria-hidden="true">04</span>
+              <h3 class="help__card-title">Emoções difíceis</h3>
+              <p class="help__card-text">
+                Tristeza, raiva, culpa ou vazio: emoções que pesam e que nem sempre sabemos nomear.
+              </p>
+            </li>
+            <li class="help__card">
+              <span class="help__card-number" aria-hidden="true">05</span>
+              <h3 class="help__card-title">Busca por sentido</h3>
+              <p class="help__card-text">
+                Momentos de transição, desânimo ou a sensação de estar sem direção, e o desejo de viver com mais
+                sentido.
+              </p>
+            </li>
+          </ul>
+
+          <p class="help__cta">
+            <span>Se algum desses temas faz parte do seu momento, podemos conversar.</span>
+            <a
+              class="link-line link-line--external"
+              href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+              target="_blank"
+              rel="noopener"
+            >
+              Agendar conversa
+              <span class="visually-hidden">pelo WhatsApp (abre em nova aba)</span>
+              <svg class="link-line__icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- 5. TRAJETÓRIA -->
+      <section class="timeline" id="trajetoria" aria-labelledby="trajetoria-titulo">
+        <div class="timeline__inner container">
+          <div class="timeline__head">
+            <p class="section-label"><span class="section-label__rule" aria-hidden="true"></span>Trajetória</p>
+            <h2 class="timeline__title" id="trajetoria-titulo">Experiência e formação</h2>
+            <p class="timeline__intro">
+              Atendimento clínico online e presencial, incluindo a atuação em ambiente hospitalar.
+            </p>
+          </div>
+
+          <div class="timeline__body">
+            <!-- Linha do tempo: o trilho e a linha terracota que se desenha com a rolagem -->
+            <div class="timeline__track" aria-hidden="true"><span class="timeline__progress"></span></div>
+
+            <ol class="timeline__list">
+              <li class="timeline__item">
+                <span class="timeline__node" aria-hidden="true"></span>
+                <p class="timeline__period">
+                  <time datetime="2023-10">out. 2023</time> – <span class="timeline__now">atual</span>
+                </p>
+                <h3 class="timeline__role">Psicóloga Clínica</h3>
+                <p class="timeline__org">PsyMeet</p>
+                <p class="timeline__meta">Tempo integral · Remoto</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__node" aria-hidden="true"></span>
+                <p class="timeline__period">
+                  <time datetime="2023-08">ago. 2023</time> – <span class="timeline__now">atual</span>
+                </p>
+                <h3 class="timeline__role">Psicóloga autônoma</h3>
+                <p class="timeline__meta">Remoto</p>
+                <p class="timeline__desc">
+                  Foco em jovens adultos com ansiedade, insegurança e desafios emocionais.
+                </p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__node" aria-hidden="true"></span>
+                <p class="timeline__period">
+                  <time datetime="2023-10">out. 2023</time> – <time datetime="2024-06">jun. 2024</time>
+                </p>
+                <h3 class="timeline__role">Psicóloga Clínica</h3>
+                <p class="timeline__org">Hospital Policlínica Unimed</p>
+                <p class="timeline__meta">Presencial</p>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__node" aria-hidden="true"></span>
+                <p class="timeline__period">
+                  <time datetime="2021-03">mar. 2021</time> – <time datetime="2023-11">nov. 2023</time>
+                </p>
+                <h3 class="timeline__role">Estagiária de Psicologia</h3>
+                <p class="timeline__org">SEPFIP</p>
+                <p class="timeline__meta">Patos, PB</p>
+              </li>
+            </ol>
+
+            <p class="timeline__note">
+              <span>Formação em Psicologia pela UNIFIP</span>
+              <span class="timeline__note-crp">CRP 13/11710</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. PUBLICAÇÃO -->
+      <section class="pub" id="publicacao" aria-labelledby="publicacao-titulo">
+        <div class="container">
+          <article class="pub__card">
+            <h2 class="section-label" id="publicacao-titulo">
+              <span class="section-label__rule" aria-hidden="true"></span>Publicação
+            </h2>
+
+            <!-- &nbsp; antes de cada "·": se a linha quebrar, o ponto fica no fim da linha, nunca no começo -->
+            <p class="pub__meta">
+              Trabalho de Conclusão de Curso&nbsp;<span aria-hidden="true">·</span> Psicologia&nbsp;<span aria-hidden="true">·</span> UNIFIP
+            </p>
+
+            <!-- EDITAR: substituir pelo título do trabalho -->
+            <div class="pub__heading">
+              <span class="pub__quote" aria-hidden="true">“</span>
+              <h3 class="pub__title"><cite>[Título do Trabalho de Conclusão de Curso]</cite></h3>
+            </div>
+
+            <div class="pub__rule" aria-hidden="true"></div>
+
+            <div class="pub__footer">
+              <p class="pub__author">
+                Jennyfer Brito Dias
+                <span>Repositório institucional UNIFIP</span>
+              </p>
+              <a
+                class="link-line link-line--external pub__link"
+                href="https://editora.unifip.edu.br/repositoriounifip/article/view/6798"
+                target="_blank"
+                rel="noopener"
+              >
+                Ler publicação
+                <span class="visually-hidden">(abre em nova aba)</span>
+                <svg class="link-line__icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 7. PERGUNTAS FREQUENTES -->
+      <section class="faq" id="perguntas-frequentes" aria-labelledby="faq-titulo">
+        <div class="faq__inner container">
+          <div class="faq__head">
+            <p class="section-label"><span class="section-label__rule" aria-hidden="true"></span>Dúvidas</p>
+            <h2 class="faq__title" id="faq-titulo">Perguntas frequentes</h2>
+            <p class="faq__intro">
+              Se a sua dúvida não estiver aqui, é só me chamar.
+              <a
+                class="link-line link-line--external"
+                href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+                target="_blank"
+                rel="noopener"
+              >
+                Enviar mensagem
+                <span class="visually-hidden">pelo WhatsApp (abre em nova aba)</span>
+                <svg class="link-line__icon" aria-hidden="true"><use href="#i-arrow-up-right" /></svg>
+              </a>
+            </p>
+          </div>
+
+          <!-- EDITAR: respostas são sugestões; revisar com a Jennyfer (duração da sessão, frequência etc.) -->
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>Como funciona a primeira sessão?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  A primeira sessão é um momento para nos conhecermos. Você pode contar o que trouxe você até aqui,
+                  no seu tempo, e tirar dúvidas sobre como a terapia funciona. Juntos, avaliamos se o processo faz
+                  sentido para você neste momento e combinamos os próximos passos.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>Como funciona o atendimento online?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  As sessões acontecem por videochamada, em uma plataforma segura, com o mesmo sigilo e cuidado do
+                  atendimento presencial. Você só precisa de uma boa conexão e de um lugar reservado, onde se sinta
+                  à vontade para falar.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>Quanto tempo dura cada sessão?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Cada sessão dura cerca de 50 minutos. Em geral, os encontros são semanais, mas a frequência é
+                  combinada de acordo com a sua necessidade.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>Por quanto tempo vou fazer terapia?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Não existe um tempo fixo. A duração do processo varia de pessoa para pessoa e depende das suas
+                  demandas e dos objetivos que definimos juntos. Ao longo do caminho, avaliamos em conjunto como você
+                  está e o momento de encerrar.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>O que é a Terapia <span class="nowrap">Cognitivo-Comportamental?</span></span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  É uma abordagem da psicologia fundamentada em pesquisa científica, que olha para a relação entre
+                  pensamentos, emoções e comportamentos. O processo é estruturado e colaborativo: os objetivos são
+                  definidos em conjunto e trabalhamos com estratégias práticas para o seu dia a dia.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>O que eu conto nas sessões fica em sigilo?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Sim. O sigilo é um dever ético previsto no Código de Ética Profissional do Psicólogo. O que é
+                  conversado nas sessões fica entre nós, exceto nas situações específicas previstas no próprio Código.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>Como faço para agendar?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  É só me chamar pelo
+                  <a
+                    href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+                    target="_blank"
+                    rel="noopener"
+                    >WhatsApp<span class="visually-hidden"> (abre em nova aba)</span></a
+                  >. Eu respondo com os horários disponíveis, os valores e as formas de pagamento.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                <span>E se eu estiver passando por uma crise?</span>
+                <span class="faq__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  A psicoterapia não é um serviço de emergência. Em situações de crise ou risco, procure ajuda
+                  imediata: CVV, pelo telefone 188 (gratuito, 24 horas); SAMU, pelo 192; ou o pronto-socorro mais
+                  próximo.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CONTATO -->
+      <section class="contact" id="contato" aria-labelledby="contato-titulo">
+        <div class="contact__glow" aria-hidden="true"></div>
+        <div class="contact__inner container">
+          <p class="section-label contact__label">
+            <span class="section-label__rule" aria-hidden="true"></span>Contato<span class="section-label__rule" aria-hidden="true"></span>
+          </p>
+          <h2 class="contact__title" id="contato-titulo">Quando fizer sentido para você, <em>estou aqui.</em></h2>
+          <p class="contact__text">
+            Me envie uma mensagem pelo WhatsApp. Respondo com os horários disponíveis e as informações sobre o
+            atendimento.
+          </p>
+          <div class="contact__actions">
+            <a
+              class="btn btn--primary btn--large"
+              href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+              target="_blank"
+              rel="noopener"
+              data-magnetic
+            >
+              <svg class="btn__icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+              <span>Agendar conversa</span>
+              <span class="visually-hidden">pelo WhatsApp (abre em nova aba)</span>
+            </a>
+            <a class="link-line contact__instagram" href="https://instagram.com/psi.jennyferbrito" target="_blank" rel="noopener">
+              <svg class="link-line__icon" aria-hidden="true"><use href="#i-instagram" /></svg>
+              @psi.jennyferbrito
+              <span class="visually-hidden">no Instagram (abre em nova aba)</span>
+            </a>
+          </div>
+          <p class="contact__phone">WhatsApp (84) 99918-0458</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 9. RODAPÉ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <p class="site-footer__name">Jennyfer Brito Dias</p>
+            <p class="site-footer__role">Psicóloga Clínica <span aria-hidden="true">·</span> CRP 13/11710</p>
+          </div>
+          <ul class="site-footer__links" role="list">
+            <li>
+              <a href="https://instagram.com/psi.jennyferbrito" target="_blank" rel="noopener"
+                >Instagram<span class="visually-hidden"> (abre em nova aba)</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+                target="_blank"
+                rel="noopener"
+                >WhatsApp<span class="visually-hidden"> (abre em nova aba)</span></a
+              >
+            </li>
+            <li><a href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a></li>
+          </ul>
+        </div>
+        <div class="site-footer__bottom">
+          <p>
+            Este site não é um serviço de emergência. Em situações de crise, ligue 188 (CVV) ou 192 (SAMU).
+          </p>
+          <p>© <span data-year>2026</span> Jennyfer Brito Dias</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botão flutuante de contato: aparece quando o botão do hero sai da tela -->
+    <a
+      class="float-cta"
+      href="https://wa.me/5584999180458?text=Ol%C3%A1%2C%20Jennyfer!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+      target="_blank"
+      rel="noopener"
+      data-float-cta
+    >
+      <svg class="float-cta__icon" aria-hidden="true"><use href="#i-whatsapp" /></svg>
+      <span>Fale comigo</span>
+      <span class="visually-hidden">pelo WhatsApp (abre em nova aba)</span>
+    </a>
+  </body>
+</html>
