@@ -49,7 +49,7 @@ Não há testes nem linter. A verificação é visual/manual (ver "Como verifica
 
 ## SEO e arquivos de marca
 
-- `.env` → `VITE_SITE_URL` (hoje o placeholder `https://seu-dominio.com.br`; **trocar antes de publicar**). É substituído no `index.html` via `%VITE_SITE_URL%` (canonical, Open Graph, JSON-LD) e usado pelo plugin `seo-files` do `vite.config.js` para gerar `robots.txt` e `sitemap.xml`.
+- `.env` → `VITE_SITE_URL` (hoje `https://site-jennyfer.vercel.app`, o endereço de produção na Vercel; trocar se o site ganhar domínio próprio — uma variável de mesmo nome no painel da Vercel tem prioridade sobre o `.env`). É substituído no `index.html` via `%VITE_SITE_URL%` (canonical, Open Graph, JSON-LD) e usado pelo plugin `seo-files` do `vite.config.js` para gerar `robots.txt` e `sitemap.xml`.
 - JSON-LD no `<head>`: `WebSite` + `Person` (CRP em `hasCredential`) + `MedicalBusiness` (sem endereço: atendimento online).
 - `public/og-image.jpg`, `public/apple-touch-icon.png` e `public/favicon-32.png` saem dos modelos em `scripts/brand/` (abertos pelo servidor de dev em `/scripts/brand/og-image.html` a 1200×630 e `/scripts/brand/touch-icon.html` a 180×180, capturados como imagem; o favicon de 32 px é a redução do ícone). Esses modelos não entram no build.
 
